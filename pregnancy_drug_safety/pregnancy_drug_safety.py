@@ -22,7 +22,8 @@ from sklearn.preprocessing import OneHotEncoder
 from sklearn.preprocessing import StandardScaler
 
 from tensorflow.keras.models import load_model
-model = load_model("Tuned_Artificial_Neural_Network_Smote_Drug_Safety_Model.h5")
+model_path = os.path.join(os.path.dirname(__file__), "Tuned_Artificial_Neural_Network_Smote_Drug_Safety_Model.h5")
+model = load_model(model_path)
 tfidf_vectorizer = joblib.load("tfidf_vectorizer.pkl")
 scaler = joblib.load("scaler.pkl")
 
