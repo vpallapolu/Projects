@@ -21,8 +21,6 @@ from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.preprocessing import StandardScaler
 
-os.chdir(r"C:\Users\pvspa\Downloads\Pregnancy Drug Safety")
-
 from tensorflow.keras.models import load_model
 model = load_model("Tuned_Artificial_Neural_Network_Smote_Drug_Safety_Model.h5")
 tfidf_vectorizer = joblib.load("tfidf_vectorizer.pkl")
