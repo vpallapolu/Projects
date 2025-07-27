@@ -118,5 +118,9 @@ if st.button("Predict Drug Category"):
         category_label = label_map.get(pred_value, "Unknown")
         st.success(f"Predicted Pregnancy Category: **{category_label}**")
         st.write("Probabilities:", probs)
+        st.markdown("""**Disclaimer:** This application is developed for academic and educational purposes only. 
+        It is not intended for clinical use or real-world medical decision-making. 
+        The underlying data is synthetic and has been oversampled using SMOTE due to class imbalance. 
+        Please do not rely on the predictions for medical or pharmaceutical guidance.""", unsafe_allow_html=True)
     else:
         st.warning("Please fill in all fields before predicting.")
