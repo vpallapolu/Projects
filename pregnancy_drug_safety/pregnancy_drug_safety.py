@@ -25,7 +25,7 @@ from tensorflow.keras.models import load_model
 model_path = os.path.join(os.path.dirname(__file__), "Tuned_Artificial_Neural_Network_Smote_Drug_Safety_Model.h5")
 model = load_model(model_path)
 base_dir = os.path.dirname(__file__)
-tfidf_vectorizer = load(os.path.join(base_dir, "tfidf_vectorizer.pkl"))
+tfidf_vectorizer = load(os.path.join(os.path.dirname(__file__), "tfidf_vectorizer.pkl"))
 scaler = load(os.path.join(base_dir,"scaler.pkl"))
 
 onehot_encoder = load(os.path.join(base_dir,"fitted_onehot_encoder.pkl"))
