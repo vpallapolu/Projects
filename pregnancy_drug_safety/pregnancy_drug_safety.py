@@ -24,10 +24,11 @@ from sklearn.preprocessing import StandardScaler
 from tensorflow.keras.models import load_model
 model_path = os.path.join(os.path.dirname(__file__), "Tuned_Artificial_Neural_Network_Smote_Drug_Safety_Model.h5")
 model = load_model(model_path)
-tfidf_vectorizer = joblib.load("tfidf_vectorizer.pkl")
-scaler = joblib.load("scaler.pkl")
+base_dir = os.path.dirname(__file__)
+tfidf_vectorizer = load(os.path.join(base_dir, "tfidf_vectorizer.pkl"))
+scaler = load(os.path.join(base_dir,"scaler.pkl"))
 
-onehot_encoder = joblib.load("fitted_onehot_encoder.pkl")
+onehot_encoder = load(os.path.join(base_dir,"fitted_onehot_encoder.pkl"))
 saved_feature_names = np.load("onehot_feature_names.npy", allow_pickle=True)
 
 st.set_page_config(page_title="Pregnancy Drug Safety Predictor", layout="wide")
